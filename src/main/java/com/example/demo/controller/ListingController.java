@@ -2,7 +2,7 @@ package com.example.demo.controller;
 
 import com.example.demo.dto.request.listing.AddListingRequest;
 import com.example.demo.dto.request.listing.UpdateListingRequest;
-import com.example.demo.dto.response.ListingResponse;
+import com.example.demo.dto.response.listing.ListingResponse;
 import com.example.demo.service.ListingService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -20,6 +20,8 @@ public class ListingController {
     public ListingController(ListingService listingService) {
         this.listingService = listingService;
     }
+
+//    private static final String UPLOAD_DIR = "/uploads";
     @PostMapping
     public ResponseEntity<ListingResponse> createListing(@RequestBody AddListingRequest addListingRequest){
         System.out.println("Received request: " + addListingRequest);
@@ -48,4 +50,18 @@ public class ListingController {
         listingService.deleteListing(id);
         return ResponseEntity.status(HttpStatus.ACCEPTED).build();
     }
+
+
+//    public ResponseEntity<String> uploadImage(@PathVariable Integer id, @RequestParam("file")MultipartFile file) {
+//        try {
+//            Files.createDirectories(Paths.get(UPLOAD_DIR));
+//
+//        } catch (Exception e){
+//            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error uploading image");
+//        }
+//
+//
+//    }
+
+
 }

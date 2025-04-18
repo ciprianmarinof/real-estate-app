@@ -2,7 +2,7 @@ package com.example.demo.mapper;
 
 import com.example.demo.dto.request.listing.AddListingRequest;
 import com.example.demo.dto.request.listing.UpdateListingRequest;
-import com.example.demo.dto.response.ListingResponse;
+import com.example.demo.dto.response.listing.ListingResponse;
 import com.example.demo.entity.Listing;
 import com.example.demo.repository.ListingRepository;
 import org.springframework.stereotype.Component;
